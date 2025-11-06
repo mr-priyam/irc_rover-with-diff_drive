@@ -9,6 +9,7 @@
 - meshes referenced in `irc_rover/meshes` (already in workspace)
 
 ## Quick build & run 
+After cloning the package into your src folder of the workspace:
 1. From workspace root :
 ```sh
 colcon build
