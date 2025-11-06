@@ -1,0 +1,500 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="irc_rover">
+  <link name="base_footprint"/>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0 0 0.3" rpy="1.5708 0 0"/>
+  </joint>
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0209890602570742 0.0153425997720421 2.25514051876985E-16"
+        rpy="0 0 0" />
+      <mass
+        value="22.8192949375364" />
+      <inertia
+        ixx="0.321103670975596"
+        ixy="0.00012638519920185"
+        ixz="2.13223588701876E-16"
+        iyy="1.11160267928444"
+        iyz="1.29243105395964E-18"
+        izz="0.797683009468964" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_fl_steering_Link">
+    <inertial>
+      <origin
+        xyz="-0.00130366065961829 -0.166762803329161 -0.00185935934092646"
+        rpy="0 0 0" />
+      <mass
+        value="6.88142641499053" />
+      <inertia
+        ixx="0.0327353564213328"
+        ixy="0.000204492603441019"
+        ixz="-4.32965852222651E-05"
+        iyy="0.0216267845601606"
+        iyz="-0.00112034325716438"
+        izz="0.0338427210309354" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fl_steering_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fl_steering_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_fl_steering_joint"
+    type="revolute">
+    <origin
+      xyz="0.54660154562232 0.0449800000000009 -0.325038580560593"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_fl_steering_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="wheel_fl_Link">
+    <inertial>
+      <origin
+        xyz="-4.62370847276183E-07 1.04393291150418E-07 0.000974447677025259"
+        rpy="0 0 0" />
+      <mass
+        value="3.47785060865596" />
+      <inertia
+        ixx="0.0114379526679739"
+        ixy="-2.40820305633184E-09"
+        ixz="6.22715020585744E-09"
+        iyy="0.0114379425454636"
+        iyz="-1.40595467977406E-09"
+        izz="0.0215020567472781" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fl_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fl_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_fl_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00105904340485075 -0.230000000000024 0.00177808874919655"
+      rpy="-3.14159265358979 0.0390248990666281 -3.14159265358979" />
+    <parent
+      link="wheel_fl_steering_Link" />
+    <child
+      link="wheel_fl_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="wheel_fr_steering_Link">
+    <inertial>
+      <origin
+        xyz="0.000422407695307214 -0.166767881640785 0.00265979265819821"
+        rpy="0 0 0" />
+      <mass
+        value="6.88142646356561" />
+      <inertia
+        ixx="0.0327314663655411"
+        ixy="-0.000224076642356098"
+        ixz="6.4360755593318E-06"
+        iyy="0.0216289844023426"
+        iyz="0.00112745447910636"
+        izz="0.0338444113542049" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fr_steering_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fr_steering_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_fr_steering_joint"
+    type="revolute">
+    <origin
+      xyz="0.546649444505055 0.0420502845255973 0.325000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_fr_steering_Link" />
+    <axis
+      xyz="0.00571351375888634 0.999983677747056 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="wheel_fr_Link">
+    <inertial>
+      <origin
+        xyz="-4.22006113720563E-07 -2.15860140345692E-07 0.000974447677030477"
+        rpy="0 0 0" />
+      <mass
+        value="3.47785060865595" />
+      <inertia
+        ixx="0.0114379508869507"
+        ixy="4.54486785300023E-09"
+        ixz="5.68352325087762E-09"
+        iyy="0.0114379443264868"
+        iyz="2.90717616976372E-09"
+        izz="0.0215020567472781" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fr_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_fr_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_fr_joint"
+    type="continuous">
+    <origin
+      xyz="-0.000325259351636298 -0.230001895775344 0.00181805352983661"
+      rpy="3.14159265358979 0 -0.00571354484489584" />
+    <parent
+      link="wheel_fr_steering_Link" />
+    <child
+      link="wheel_fr_Link" />
+    <axis
+      xyz="0.0390143575604397 -0.000222912707099175 0.999238625261289" />
+  </joint>
+  <link
+    name="wheel_bl_steering_Link">
+    <inertial>
+      <origin
+        xyz="0.00140152431418344 -0.166762835217298 -0.00178674584964172"
+        rpy="0 0 0" />
+      <mass
+        value="6.88142641499053" />
+      <inertia
+        ixx="0.0327339050753973"
+        ixy="-0.000144094783823801"
+        ixz="-1.62729670289578E-05"
+        iyy="0.0216267841015325"
+        iyz="-0.00112970098240106"
+        izz="0.0338441728354989" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_bl_steering_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_bl_steering_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_bl_steering_joint"
+    type="revolute">
+    <origin
+      xyz="-0.478881250359994 0.044980000000001 -0.324985516803047"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_bl_steering_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="wheel_bl_Link">
+    <inertial>
+      <origin
+        xyz="4.72206770574246E-07 4.12980136199614E-08 0.000974447677029588"
+        rpy="0 0 0" />
+      <mass
+        value="3.47785060865596" />
+      <inertia
+        ixx="0.0114379531266019"
+        ixy="9.72952032571281E-10"
+        ixz="-6.35961913537345E-09"
+        iyy="0.0114379420868356"
+        iyz="-5.56196244766212E-10"
+        izz="0.0215020567472781" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_bl_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_bl_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_bl_joint"
+    type="continuous">
+    <origin
+      xyz="0.000962131156877044 -0.230000000000005 0.0018323417176952"
+      rpy="3.14159265358979 0.014646807696397 3.14159265358979" />
+    <parent
+      link="wheel_bl_steering_Link" />
+    <child
+      link="wheel_bl_Link" />
+    <axis
+      xyz="0 -2.59879529529562E-05 -0.999999999662313" />
+  </joint>
+  <link
+    name="wheel_br_steering_Link">
+    <inertial>
+      <origin
+        xyz="-0.00232842449136678 -0.16675240545248 0.0026597926506825"
+        rpy="0 0 0" />
+      <mass
+        value="6.8814263899123" />
+      <inertia
+        ixx="0.0327351362928873"
+        ixy="9.71606505408953E-05"
+        ixz="6.43636832134732E-06"
+        iyy="0.0216253144294474"
+        iyz="0.00112744806314421"
+        izz="0.0338444112846986" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_br_steering_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_br_steering_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_br_steering_joint"
+    type="revolute">
+    <origin
+      xyz="-0.478815754336701 0.0479093896822361 0.325"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_br_steering_Link" />
+    <axis
+      xyz="0.00571351375888773 0.999983677747056 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="wheel_br_Link">
+    <inertial>
+      <origin
+        xyz="-3.98946257862409E-07 2.55981728147781E-07 0.000974447677030699"
+        rpy="0 0 0" />
+      <mass
+        value="3.47785060865595" />
+      <inertia
+        ixx="0.0114379499424448"
+        ixy="-5.09510836116974E-09"
+        ixz="5.37295608669235E-09"
+        iyy="0.0114379452709926"
+        iyz="-3.44752849179766E-09"
+        izz="0.0215020567472781" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_br_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irc_rover/meshes/wheel_br_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_br_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00230295697745109 -0.229990595988309 0.00181805352983638"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="wheel_br_steering_Link" />
+    <child
+      link="wheel_br_Link" />
+    <axis
+      xyz="0.0146462609517394 2.59879529530193E-05 0.99989273742975" />
+  </joint>
+  
+</robot>

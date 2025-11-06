@@ -1,0 +1,13 @@
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Build and temp
+build/
+dist/
+*.log
+*.tmp
