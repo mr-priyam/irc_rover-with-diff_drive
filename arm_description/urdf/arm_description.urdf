@@ -1,0 +1,390 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="arm_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00810040629387061 -0.0396616619639222 0.028"
+        rpy="0 0 0" />
+      <mass
+        value="0.766684967151914" />
+      <inertia
+        ixx="0.0022667110439234"
+        ixy="0.000316230845415983"
+        ixz="1.80657701906993E-20"
+        iyy="0.000710688821500799"
+        iyz="-2.52998903801764E-21"
+        izz="0.00257667918925946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.615686274509804 0.811764705882353 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rotating_base">
+    <inertial>
+      <origin
+        xyz="0.00615100835492018 -0.012725958880778 0.0222536559801734"
+        rpy="0 0 0" />
+      <mass
+        value="0.0631299235148627" />
+      <inertia
+        ixx="0.000116167220418234"
+        ixy="1.24601951121971E-05"
+        ixz="-4.43208090595218E-06"
+        iyy="9.63822950524819E-05"
+        iyz="9.20452852669657E-06"
+        izz="0.000143318608255073" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/rotating_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/rotating_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rotating_base"
+    type="continuous">
+    <origin
+      xyz="0 0 0.056"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rotating_base" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="shoulder">
+    <inertial>
+      <origin
+        xyz="-0.0339620564322988 0.0703250132877751 0.132304801374624"
+        rpy="0 0 0" />
+      <mass
+        value="0.176248600181812" />
+      <inertia
+        ixx="0.00223065038773932"
+        ixy="0.000396791830011183"
+        ixz="0.000489233644916762"
+        iyy="0.00159481284845064"
+        iyz="-0.0010186151481865"
+        izz="0.00101836502973383" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.768627450980392 0.886274509803922 0.952941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="-0.010837 0.022529 0.056"
+      rpy="0 0 0" />
+    <parent
+      link="rotating_base" />
+    <child
+      link="shoulder" />
+    <axis
+      xyz="-0.90116 -0.43349 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="elbow">
+    <inertial>
+      <origin
+        xyz="-0.105032649982549 0.218343898382363 -0.109693664665305"
+        rpy="0 0 0" />
+      <mass
+        value="0.359561959940994" />
+      <inertia
+        ixx="0.00277816604176355"
+        ixy="0.00101770917295484"
+        ixz="-0.000461304534661371"
+        iyy="0.00115209374230397"
+        iyz="0.000958968763105053"
+        izz="0.0027802252659199" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/elbow.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.768627450980392 0.886274509803922 0.952941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/elbow.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="-0.076999 0.16007 0.25168"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder" />
+    <child
+      link="elbow" />
+    <axis
+      xyz="0.90116 0.43349 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="differential">
+    <inertial>
+      <origin
+        xyz="-0.00159944501821485 0.00452468977314691 -0.0236876564208104"
+        rpy="0 0 0" />
+      <mass
+        value="0.226861267973199" />
+      <inertia
+        ixx="0.000221479108955072"
+        ixy="-9.83056402005241E-05"
+        ixz="-5.51111312855736E-06"
+        iyy="0.000378527038374379"
+        iyz="1.15575520958708E-05"
+        izz="0.000364824771947718" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/differential.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/differential.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="differential_joint"
+    type="revolute">
+    <origin
+      xyz="-0.16999 0.35223 -0.17384"
+      rpy="0 0 0" />
+    <parent
+      link="elbow" />
+    <child
+      link="differential" />
+    <axis
+      xyz="-0.90116 -0.43349 0" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="differential_rotation">
+    <inertial>
+      <origin
+        xyz="-0.00727312304980049 0.01712785050821 -0.0933402352068741"
+        rpy="0 0 0" />
+      <mass
+        value="0.187019685283195" />
+      <inertia
+        ixx="0.00010126064539545"
+        ixy="-1.29495933089213E-05"
+        ixz="-1.32340475388287E-06"
+        iyy="0.000103469301148276"
+        iyz="-6.03325193113658E-07"
+        izz="0.000113024023027209" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/differential_rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/differential_rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="differential_rotation_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0008559 0.0017793 -0.0098032"
+      rpy="0 0 0" />
+    <parent
+      link="differential" />
+    <child
+      link="differential_rotation" />
+    <axis
+      xyz="-0.085589 0.17792 -0.98031" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+  <link
+    name="actuator">
+    <inertial>
+      <origin
+        xyz="-0.00295100966277212 0.00900491591246533 -0.0446999084847799"
+        rpy="0 0 0" />
+      <mass
+        value="0.634947401204779" />
+      <inertia
+        ixx="0.00114104988572515"
+        ixy="-0.000230745160508774"
+        ixz="-7.40417823241837E-05"
+        iyy="0.00116755297692799"
+        iyz="9.18155304846846E-05"
+        izz="0.000795800850137349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/actuator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arm_description/meshes/actuator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="actuator_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0079235 0.016811 -0.094695"
+      rpy="0 0 0" />
+    <parent
+      link="differential_rotation" />
+    <child
+      link="actuator" />
+    <axis
+      xyz="0.73596 0.67453 0.05817" />
+    <limit
+      lower="-0.6"
+      upper="+0.6"
+      effort="100"
+      velocity="50" />
+  </joint>
+</robot>
