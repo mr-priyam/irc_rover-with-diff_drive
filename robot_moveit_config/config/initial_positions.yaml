@@ -1,0 +1,9 @@
+# Default initial positions for arm_description's ros2_control fake system
+
+initial_positions:
+  actuator_joint: 0
+  differential_joint: 0
+  differential_rotation_joint: 0
+  elbow_joint: 0
+  rotating_base: 0
+  shoulder_joint: 0
